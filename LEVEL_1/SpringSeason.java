@@ -4,7 +4,7 @@ public class SpringSeason {
         if (args.length < 2) {
             System.out.println("Error: Please provide month and day as arguments");
             System.out.println("Example: java SpringSeason 4 15");
-            return;  // Exit the program
+            return; 
         }
 
         int month = Integer.parseInt(args[0]);

@@ -2,33 +2,22 @@ import java.util.Scanner;
 
 public class SumOfNaturalNumbers {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("Enter a natural number: ");
-        int n = scanner.nextInt();
+        int n = sc.nextInt();
 
         if (n <= 0) {
-            System.out.println("Please enter a valid natural number (positive integer).");
+            System.out.println("Enter a positive number.");
         } else {
-            int sumLoop = 0;
-            int counter = 1;
+            int sum = 0;
+            for (int i = 1; i <= n; i++) sum += i;
 
-            while (counter <= n) {
-                sumLoop += counter;
-                counter++;
-            }
+            int formulaSum = n * (n + 1) / 2;
 
-            int sumFormula = n * (n + 1) / 2;
-
-            System.out.println("Sum using while loop: " + sumLoop);
-            System.out.println("Sum using formula: " + sumFormula);
-
-            if (sumLoop == sumFormula) {
-                System.out.println("Both results are correct and match.");
-            } else {
-                System.out.println("Mismatch in results!");
-            }
+            System.out.println("Sum using loop: " + sum);
+            System.out.println("Sum using formula: " + formulaSum);
+            System.out.println(sum == formulaSum ? "Both match." : "Mismatch!");
         }
-
-        scanner.close();
+        sc.close();
     }
 }
